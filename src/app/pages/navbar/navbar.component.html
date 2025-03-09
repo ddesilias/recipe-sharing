@@ -1,0 +1,27 @@
+<div class="flex flex-col">
+  <mat-toolbar class="flex items-center justify-between">
+    <div class="flex items-center">
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Recipe Sharing</span>
+    </div>
+    <div class="flex items-center">
+      <button
+        mat-icon-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+      >
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-button (click)="handleLogout()">
+        <span *ngIf="user">{{ user.fullName }}</span>
+        <span>{{ user?.fullName }}</span>
+      </button>
+    </div>
+  </mat-toolbar>
+</div>

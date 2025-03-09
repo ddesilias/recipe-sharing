@@ -1,0 +1,100 @@
+<div class="login-container">
+  <div class="container">
+    <div class="form-side">
+      <div class="login-form" [hidden]="isRegister">
+        <h1>Login</h1>
+        <form [formGroup]="loginForm" (ngSubmit)="handleLogin()">
+          <div class="form-field">
+            <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="email" formControlName="email" />
+            </mat-form-field>
+          </div>
+          <div class="form-field">
+            <mat-form-field>
+              <mat-label>Password</mat-label>
+              <input
+                matInput
+                type="password"
+                placeholder="password"
+                formControlName="password"
+              />
+            </mat-form-field>
+          </div>
+          <div class="form-button">
+            <button mat-raised-button color="primary" type="submit">
+              Login
+            </button>
+            <button mat-button type="button" (click)="toggleRegister()">
+              Need an account? Sign up
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Register Form -->
+      <div class="signup-form" [hidden]="!isRegister">
+        <h1>Sign Up</h1>
+        <form [formGroup]="registerForm" (ngSubmit)="handleRegister()">
+          <div class="form-field">
+            <mat-form-field>
+              <mat-label>Full Name</mat-label>
+              <input
+                matInput
+                placeholder="full name"
+                formControlName="fullName"
+              />
+            </mat-form-field>
+          </div>
+          <div class="form-field">
+            <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="email" formControlName="email" />
+            </mat-form-field>
+          </div>
+          <div class="form-field">
+            <mat-form-field>
+              <mat-label>Password</mat-label>
+              <input
+                matInput
+                type="password"
+                placeholder="password"
+                formControlName="password"
+              />
+            </mat-form-field>
+          </div>
+          <div class="form-button">
+            <button mat-raised-button color="primary" type="submit">
+              Sign Up
+            </button>
+            <button mat-button type="button" (click)="toggleRegister()">
+              Already have an account? Login
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="cover-side">
+      <div class="front">
+        <img
+          src="https://cdn.pixabay.com/photo/2019/06/22/13/55/thai-4291605_1280.jpg"
+          alt=""
+        />
+        <div class="text">
+          <span class="text-1">Welcome Back</span>
+          <p>Login to your account to continue</p>
+        </div>
+      </div>
+      <div class="back">
+        <img
+          src="https://cdn.pixabay.com/photo/2022/08/02/07/30/pizza-7359753_640.jpg"
+          alt=""
+        />
+        <div class="text">
+          <span class="text-2">Create an account</span>
+          <p>Sign up to get started</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

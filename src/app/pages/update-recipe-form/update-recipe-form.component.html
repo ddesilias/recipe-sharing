@@ -1,0 +1,67 @@
+<h1 class="text-center text-black pt-5">Update Recipe : {{ recipeItem.id }}</h1>
+<form
+  (ngSubmit)="onSubmit()"
+  class="w-[27rem] p-6 rounded-lg shadow-md example-form"
+>
+  <div class="mb-4">
+    <mat-form-field class="w-full">
+      <mat-label class="text-black">Recipe Name</mat-label>
+      <input
+        matInput
+        placeholder="title"
+        [(ngModel)]="recipeItem.title"
+        name="title"
+        class="py-2 px-3 text-black mt-1 focus:shadow-outline"
+      />
+    </mat-form-field>
+  </div>
+  <div class="mb-4">
+    <mat-form-field class="w-full">
+      <mat-label class="text-black">Description</mat-label>
+      <input
+        matInput
+        placeholder="description"
+        [(ngModel)]="recipeItem.description"
+        name="description"
+        class="py-2 px-3 text-black mt-1 focus:shadow-outline"
+      />
+    </mat-form-field>
+  </div>
+  <div class="mb-4">
+    <mat-form-field class="w-full">
+      <mat-label class="text-black">Food Type</mat-label>
+      <input
+        matInput
+        placeholder="food type"
+        [(ngModel)]="recipeItem.foodType"
+        name="foodType"
+        class="py-2 px-3 text-black mt-1 focus:shadow-outline"
+      />
+    </mat-form-field>
+  </div>
+  <div class="mb-4">
+    <mat-radio-group
+      name="foodTypeRadio"
+      aria-label="Select an option"
+      [(ngModel)]="recipeItem.foodType"
+    >
+      <mat-radio-button value="vegetarian">Vegetarian</mat-radio-button>
+      <mat-radio-button value="non-vegetarian">Non-vegetarian</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div class="mb-4">
+    <mat-form-field class="w-full">
+      <mat-label class="text-black">Image</mat-label>
+      <input
+        matInput
+        placeholder="image"
+        [(ngModel)]="recipeItem.image"
+        name="image"
+        class="py-2 px-3 text-black mt-1 focus:shadow-outline"
+      />
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-raised-button color="primary" type="submit">Update</button>
+  </div>
+</form>

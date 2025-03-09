@@ -1,0 +1,51 @@
+<mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <img mat-card-avatar class="example-header-image" [src]="recipe.image" />
+    <mat-card-title class="text-2xl font-bold text-black">{{
+      recipe.user.fullName
+    }}</mat-card-title>
+    <mat-card-subtitle>{{ recipe.title }}</mat-card-subtitle>
+  </mat-card-header>
+  <img
+    class="max-h-[400px] object-cover"
+    mat-card-image
+    [src]="recipe.image"
+    alt="Photo of a Shiba Inu"
+  />
+  <mat-card-content>
+    <p class="recipe-description text-black">
+      {{ recipe.description }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="flex justify-between">
+    <div>
+      <button
+        (click)="onLikeRecipe(recipe.id)"
+        mat-icon-button
+        aria-label="Example icon button with a home icon"
+      >
+        <mat-icon
+          [color]="recipe.likes.includes(recipe.user.id) ? 'warn' : 'default'"
+          >favorite</mat-icon
+        >
+      </button>
+      <button
+        (click)="onOpenRecipe()"
+        mat-icon-button
+        aria-label="Example icon button with a home icon"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button aria-label="Example icon button with a home icon">
+        <mat-icon>share</mat-icon>
+      </button>
+    </div>
+    <button
+      mat-icon-button
+      aria-label="Example icon button with a home icon"
+      (click)="onDeleteRecipe(recipe.id)"
+    >
+      <mat-icon color="warn">delete</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>
